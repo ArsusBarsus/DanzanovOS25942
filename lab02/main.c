@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+time_t now;
+
+time(&now);
+putenv("TZ=PST8PDT");
+tzset();
+
+printf("California time: %s", ctime(&now));
+return 0;
+}
